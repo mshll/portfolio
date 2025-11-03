@@ -76,21 +76,21 @@ export default function Contact() {
   return (
     <Section id="contact" className="relative">
       <Container>
-        <motion.div
+        <div
           className="mx-auto"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
+          // initial={{ opacity: 0, y: 50 }}
+          // whileInView={{ opacity: 1, y: 0 }}
+          // transition={{ duration: 0.8, delay: 0.2 }}
+          // viewport={{ once: true }}
         >
           <div className="space-y-12 overflow-hidden">
             {/* Contact Header */}
-            <motion.div
+            <div
               className="text-center"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              viewport={{ once: true }}
+              // initial={{ opacity: 0, y: 30 }}
+              // whileInView={{ opacity: 1, y: 0 }}
+              // transition={{ duration: 0.6, delay: 0.4 }}
+              // viewport={{ once: true }}
             >
               <h2 className="text-4xl md:text-5xl font-pp-editorial-new tracking-tight mb-6">
                 Get in <span className="italic">Touch</span>
@@ -100,32 +100,32 @@ export default function Contact() {
               <p className="text-lg text-muted-foreground max-w-lg mx-auto">
                 I&apos;m always interested in hearing about new opportunities, projects, or just having a chat.
               </p>
-            </motion.div>
+            </div>
 
             {/* Main Content Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
               {/* ASCII Art - Left Side */}
-              <motion.div
+              <div
                 className="justify-center items-center hidden md:flex"
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.6 }}
-                viewport={{ once: true }}
+                // initial={{ opacity: 0, x: -50 }}
+                // whileInView={{ opacity: 1, x: 0 }}
+                // transition={{ duration: 0.6, delay: 0.6 }}
+                // viewport={{ once: true }}
               >
                 <div className="flex justify-center items-center max-w-full overflow-hidden">
                   <pre className="text-[2.5px] md:text-[3px] lg:text-[3.5px] text-foreground select-none whitespace-pre font-mono leading-none origin-center hover:text-muted-foreground transition-colors">
                     {SCROLL_ASCII}
                   </pre>
                 </div>
-              </motion.div>
+              </div>
 
               {/* Contact Form - Right Side */}
-              <motion.div
+              <div
                 className="space-y-6 h-full"
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.8 }}
-                viewport={{ once: true }}
+                // initial={{ opacity: 0, x: 50 }}
+                // whileInView={{ opacity: 1, x: 0 }}
+                // transition={{ duration: 0.6, delay: 0.8 }}
+                // viewport={{ once: true }}
               >
                 <Form {...form}>
                   <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 flex flex-col justify-center h-full">
@@ -176,7 +176,9 @@ export default function Contact() {
                         </FormItem>
                       )}
                     />
-                    <motion.div className="flex justify-start" whileHover={{ scale: 1 }} whileTap={{ scale: 1 }}>
+                    <div className="flex justify-start" 
+                    // whileHover={{ scale: 1 }} whileTap={{ scale: 1 }}
+                    >
                       <Button type="submit" disabled={isSubmitting} size="lg" className="w-full">
                         {isSubmitting ? (
                           <>
@@ -190,32 +192,32 @@ export default function Contact() {
                           <>Send Message</>
                         )}
                       </Button>
-                    </motion.div>
+                    </div>
                   </form>
                 </Form>
-              </motion.div>
+              </div>
             </div>
 
             {/* Divider */}
-            <motion.div
+            <div
               className="flex items-center justify-center"
-              initial={{ opacity: 0, scaleX: 0 }}
-              whileInView={{ opacity: 1, scaleX: 1 }}
-              transition={{ duration: 0.6, delay: 0.7 }}
-              viewport={{ once: true }}
+              // initial={{ opacity: 0, scaleX: 0 }}
+              // whileInView={{ opacity: 1, scaleX: 1 }}
+              // transition={{ duration: 0.6, delay: 0.7 }}
+              // viewport={{ once: true }}
             >
               <div className="flex-1 h-px bg-muted-foreground/10"></div>
               <span className="px-4 text-muted-foreground/50 font-pp-editorial-new text-xs xs:text-sm">OR</span>
               <div className="flex-1 h-px bg-muted-foreground/10"></div>
-            </motion.div>
+            </div>
 
             {/* Email contact */}
-            <motion.div
+            <div
               className="text-center"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              viewport={{ once: true }}
+              // initial={{ opacity: 0, y: 30 }}
+              // whileInView={{ opacity: 1, y: 0 }}
+              // transition={{ duration: 0.6, delay: 0.5 }}
+              // viewport={{ once: true }}
             >
               <p className="text-muted-foreground mb-4">Reach out directly at</p>
               <Link
@@ -224,9 +226,9 @@ export default function Contact() {
               >
                 <span className="italic">hello</span>@meshal.me
               </Link>
-            </motion.div>
+            </div>
           </div>
-        </motion.div>
+        </div>
       </Container>
     </Section>
   );

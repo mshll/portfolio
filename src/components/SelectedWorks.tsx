@@ -1,5 +1,4 @@
 'use client';
-import { motion } from 'framer-motion';
 import Container from './Container';
 import Section from './Section';
 import { projects, Project } from '@/constants/projects';
@@ -10,15 +9,15 @@ import { Button } from './ui/button';
 import { Badge } from './ui/badge';
 import { cn } from '@/lib/utils';
 
-const ProjectCard = ({ project, index }: { project: Project; index: number }) => {
+const ProjectCard = ({ project }: { project: Project; index: number }) => {
   const isTwoButtons = project.liveUrl && project.sourceUrl;
   return (
-    <motion.div
+    <div
       className="group flex flex-col gap-6 p-2 rounded-xl bg-red-400/0 border border-border outline-1 outline-border outline-offset-4 size-full"
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: index * 0.1 }}
-      viewport={{ once: true }}
+      // initial={{ opacity: 0, y: 20 }}
+      // whileInView={{ opacity: 1, y: 0 }}
+      // transition={{ duration: 0.6, delay: index * 0.1 }}
+      // viewport={{ once: true }}
     >
       {/* Project Image */}
       {project.image && (
@@ -76,7 +75,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
           )}
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
@@ -88,19 +87,19 @@ export default function SelectedWorks() {
   return (
     <Section id="work" className="relative">
       <Container>
-        <motion.div
+        <div
           className="space-y-16"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
+          // initial={{ opacity: 0, y: 50 }}
+          // whileInView={{ opacity: 1, y: 0 }}
+          // transition={{ duration: 0.8, delay: 0.2 }}
+          // viewport={{ once: true }}
         >
-          <motion.div
+          <div
             className="text-center"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            viewport={{ once: true }}
+            // initial={{ opacity: 0, y: 30 }}
+            // whileInView={{ opacity: 1, y: 0 }}
+            // transition={{ duration: 0.6, delay: 0.4 }}
+            // viewport={{ once: true }}
           >
             <h2 className="text-4xl md:text-5xl font-pp-editorial-new tracking-tight mb-6">
               Selected <span className="italic">Works</span>
@@ -109,14 +108,14 @@ export default function SelectedWorks() {
             {/* <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               A collection of projects that showcase my passion for creating thoughtful digital experiences.
             </p> */}
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-stretch">
             {arrangedProjects.map((project, index) => (
               <ProjectCard key={project.id} project={project} index={index} />
             ))}
           </div>
-        </motion.div>
+        </div>
       </Container>
     </Section>
   );

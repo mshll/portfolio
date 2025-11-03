@@ -33,48 +33,48 @@ export default function About() {
   return (
     <Section id="about" className="relative">
       <Container>
-        <motion.div
+        <div
           className="mb-6"
-          initial={{ opacity: 0, scale: 0.8 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          viewport={{ once: true }}
+          // initial={{ opacity: 0, scale: 0.8 }}
+          // whileInView={{ opacity: 1, scale: 1 }}
+          // transition={{ duration: 0.6, delay: 0.6 }}
+          // viewport={{ once: true }}
         >
           <div className="flex justify-center items-center max-w-full overflow-hidden">
             <pre className="text-foreground select-none whitespace-pre font-mono leading-none origin-center text-[2.5px] md:text-[4px] hover:text-muted-foreground transition-colors">
               {TRIUMPH_OF_GALATEA}
             </pre>
           </div>
-        </motion.div>
-        <motion.div
+        </div>
+        <div
           className="max-w-3xl mx-auto"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
+          // initial={{ opacity: 0, y: 50 }}
+          // whileInView={{ opacity: 1, y: 0 }}
+          // transition={{ duration: 0.8, delay: 0.2 }}
+          // viewport={{ once: true }}
         >
           <div className="space-y-12">
             {/* About Header */}
-            <motion.div
+            <div
               className="text-center"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              viewport={{ once: true }}
+              // initial={{ opacity: 0, y: 30 }}
+              // whileInView={{ opacity: 1, y: 0 }}
+              // transition={{ duration: 0.6, delay: 0.4 }}
+              // viewport={{ once: true }}
             >
               <h2 className="text-4xl md:text-5xl font-pp-editorial-new tracking-tight mb-6">
                 About <span className="italic">Me</span>
               </h2>
               <pre className="text-muted-foreground/50 text-sm font-mono text-center mb-6">⎯ ✦ ⎯</pre>
-            </motion.div>
+            </div>
 
             {/* Main Content */}
-            <motion.div
+            <div
               className="prose prose-lg max-w-none"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              viewport={{ once: true }}
+              // initial={{ opacity: 0, y: 30 }}
+              // whileInView={{ opacity: 1, y: 0 }}
+              // transition={{ duration: 0.6, delay: 0.6 }}
+              // viewport={{ once: true }}
             >
               <div className="space-y-8 text-muted-foreground leading-relaxed">
                 <p className="text-lg text-justify">
@@ -97,15 +97,15 @@ export default function About() {
                   delivering seamless digital experiences.
                 </p>
               </div>
-            </motion.div>
+            </div>
 
             {/* Technology Stack */}
-            <motion.div
+            <div
               className="space-y-6"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-              viewport={{ once: true }}
+              // initial={{ opacity: 0, y: 30 }}
+              // whileInView={{ opacity: 1, y: 0 }}
+              // transition={{ duration: 0.6, delay: 0.8 }}
+              // viewport={{ once: true }}
             >
               <h3 className="text-center text-xl font-pp-editorial-new text-foreground">
                 Technologies & <span className="italic">Tools</span>
@@ -118,8 +118,8 @@ export default function About() {
                     className="px-4 py-2 text-sm font-medium text-muted-foreground/80 bg-muted/20 hover:bg-muted/30 rounded-full border border-border/30 hover:border-border/50 transition-all cursor-default select-none"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
+                    // initial={{ opacity: 0, scale: 0.9 }}
+                    // whileInView={{ opacity: 1, scale: 1 }}
                     transition={{
                       duration: 0.3,
                       delay: 0.5 + index * 0.05,
@@ -130,15 +130,15 @@ export default function About() {
                   </motion.span>
                 ))}
               </div>
-            </motion.div>
+            </div>
 
             {/* Social Links & Resume */}
-            <motion.div
+            <div
               className="space-y-8"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1.0 }}
-              viewport={{ once: true }}
+              // initial={{ opacity: 0, y: 30 }}
+              // whileInView={{ opacity: 1, y: 0 }}
+              // transition={{ duration: 0.6, delay: 1.0 }}
+              // viewport={{ once: true }}
             >
               <div className="text-center">
                 <h3 className="text-xl font-pp-editorial-new text-foreground mb-6">
@@ -146,9 +146,9 @@ export default function About() {
                 </h3>
                 <SocialLinks includeResume includeEmail />
               </div>
-            </motion.div>
+            </div>
           </div>
-        </motion.div>
+        </div>
       </Container>
     </Section>
   );
