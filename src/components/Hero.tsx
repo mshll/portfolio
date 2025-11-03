@@ -1,27 +1,24 @@
-'use client';
-import Container from './Container';
-import { LEFT_HAND_ASCII, RIGHT_HAND_ASCII } from '@/constants/asciiArt';
-import { motion, useMotionValue, useTransform } from 'framer-motion';
-import { useScrambleText } from '@/hooks/useScrambleText';
-import { useCallback } from 'react';
-import EtherealShadow from '@/components/ui/etheral-shadow';
-import { useIsMobile } from '@/hooks/use-mobile';
-import { useTheme } from 'next-themes';
+"use client";
+import Container from "./Container";
+import { LEFT_HAND_ASCII, RIGHT_HAND_ASCII } from "@/constants/asciiArt";
+import { motion, useMotionValue, useTransform } from "framer-motion";
+import { useScrambleText } from "@/hooks/useScrambleText";
+import { useCallback } from "react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 export default function Hero() {
-  const { theme } = useTheme();
   const isMobile = useIsMobile();
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
   // Use scramble hooks for both hands
   const leftHand = useScrambleText(LEFT_HAND_ASCII, {
-    scrambleChars: '.,;:!?/\\|()[]{}',
+    scrambleChars: ".,;:!?/\\|()[]{}",
     restoreSpeed: 60,
   });
 
   const rightHand = useScrambleText(RIGHT_HAND_ASCII, {
-    scrambleChars: '.,;:!?/\\|()[]{}',
+    scrambleChars: ".,;:!?/\\|()[]{}",
     restoreSpeed: 60,
   });
 
@@ -44,7 +41,9 @@ export default function Hero() {
       // Calculate scramble intensity based on distance from center
       const centerX = 0.5;
       const centerY = 0.5;
-      const distanceFromCenter = Math.sqrt(Math.pow(x - centerX, 2) + Math.pow(y - centerY, 2));
+      const distanceFromCenter = Math.sqrt(
+        Math.pow(x - centerX, 2) + Math.pow(y - centerY, 2)
+      );
       const intensity = Math.min(distanceFromCenter * 0.4, 0.25); // More responsive
 
       // Trigger scrambling when moving away from center
@@ -70,21 +69,24 @@ export default function Hero() {
       data-hide-cursor="true"
     >
       {/* absolute background image */}
-      {/* <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url('/hero_bg.png')` }} /> */}
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: `url('/hero_bg.webp')` }}
+      />
       <div className="absolute bg-gradient-to-t from-background top-11/12 left-0 w-full h-1/12 to-transparent inset-0 z-[11]" />
 
-      <EtherealShadow
+      {/* <EtherealShadow
         color="oklch(from var(--muted-foreground) l c h / 0.15)"
         animation={{ scale: 100, speed: 90 }}
-        noise={{ opacity: theme === 'dark' ? 0.5 : 0, scale: 1.2 }}
-      />
+        noise={{ opacity: theme === "dark" ? 0.5 : 0, scale: 1.2 }}
+      /> */}
 
       {/* Left Hand ASCII Art */}
       <motion.div
         className="block absolute left-0 top-4/5 sm:top-2/3 transform -translate-y-1/2 z-10"
         initial={{ x: -200, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
-        transition={{ duration: 1, delay: 0.5, ease: 'easeOut' }}
+        transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
         style={{
           x: leftHandX,
           y: leftHandY,
@@ -100,7 +102,7 @@ export default function Hero() {
         className="block absolute right-0 top-1/5 sm:top-1/3 transform -translate-y-1/2 z-10"
         initial={{ x: 200, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
-        transition={{ duration: 1, delay: 0.5, ease: 'easeOut' }}
+        transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
         style={{
           x: rightHandX,
           y: rightHandY,
@@ -119,7 +121,12 @@ export default function Hero() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <motion.div className="space-y-6" initial={{ y: 30, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.6, delay: 0.4 }}>
+          <motion.div
+            className="space-y-6"
+            initial={{ y: 30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
             <motion.div
               className="flex justify-between text-lg text-muted-foreground/50 max-w-xl mx-auto leading-relaxed font-medium font-pp-editorial-new"
               initial={{ y: -20, opacity: 0 }}
@@ -143,7 +150,8 @@ export default function Hero() {
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.6, delay: 1.0 }}
             >
-              Software Engineer <span className="font-pp-editorial-new">@ Boubyan</span>
+              Software Engineer{" "}
+              <span className="font-pp-editorial-new">@ Boubyan</span>
             </motion.p>
           </motion.div>
         </motion.div>
